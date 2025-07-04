@@ -85,3 +85,13 @@ env = ~/moonraker-telegram-bot-env/bin/python
 requirements = scripts/requirements.txt
 install_script = scripts/install.sh
 
+[update_manager cartographer]
+type = git_repo
+path = ~/cartographer-klipper
+channel = stable
+origin = https://github.com/Cartographer3D/cartographer-klipper.git
+is_system_service = False
+managed_services = klipper
+info_tags = 
+	desc=Cartographer Probe
+
