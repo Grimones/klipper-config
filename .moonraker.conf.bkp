@@ -70,28 +70,20 @@ system_dependencies = system-dependencies.json
 primary_branch = main
 managed_services = klipper
 
-[update_manager cartographer]
-type = git_repo
-path = ~/cartographer-klipper
+[update_manager cartographer_plugin]
+type = python
 channel = stable
-origin = https://github.com/Cartographer3D/cartographer-klipper.git
+virtualenv = ~/klippy-env
+project_name = cartographer3d-plugin
 is_system_service = False
 managed_services = klipper
-info_tags = 
-	desc=Cartographer Probe
+info_tags = desc=Cartographer Plugin
 
-[update_manager octoeverywhere]
+[update_manager moonraker-telegram-bot]
+install_script = scripts/install.sh
+requirements = scripts/requirements.txt
+env = /home/voron/moonraker-telegram-bot-env/bin/python
+origin = https://github.com/nlef/moonraker-telegram-bot.git
+path = /home/voron/moonraker-telegram-bot
 type = git_repo
-channel = beta
-path = /home/voron/octoeverywhere
-origin = https://github.com/QuinnDamerell/OctoPrint-OctoEverywhere.git
-env = /home/voron/octoeverywhere-env/bin/python
-requirements = requirements.txt
-install_script = install.sh
-managed_services = 
-	octoeverywhere
-
-[announcements]
-subscriptions = 
-	octoeverywhere
 
